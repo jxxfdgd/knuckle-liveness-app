@@ -1,0 +1,48 @@
+{
+  "resize_first": 256,
+  "input_size": 224,
+  "models": {
+    "MobileNetV3": {
+      "file": "mobilenet_v3_large_replay.pt",
+      "threshold": 0.6526287674903851,
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    },
+    "DINOv2 + LoRA": {
+      "file": "dinov2_lora_replay.pt",
+      "threshold": 0.536038908362388,
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    },
+    "FoundPAD (CLIP)": {
+      "file": "foundpad_replay.pt",
+      "threshold": 0.3369992747902868,
+      "mean": [
+        0.48145466,
+        0.4578275,
+        0.40821073
+      ],
+      "std": [
+        0.26862954,
+        0.26130258,
+        0.27577711
+      ]
+    }
+  }
+}

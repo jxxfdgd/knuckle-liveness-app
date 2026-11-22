@@ -1,0 +1,16 @@
+# personal test captures (hand photos + log) — never commit
+captures/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# nested git metadata if TPO_repo is re-cloned
+TPO_repo/.git/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

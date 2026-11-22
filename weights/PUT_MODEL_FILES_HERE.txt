@@ -1,0 +1,1 @@
+Unzip knuckle_models.zip here (config.json + the three .pt files).

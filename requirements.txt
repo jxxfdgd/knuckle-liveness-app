@@ -1,0 +1,12 @@
+# CPU-only PyTorch: the default Linux wheel pulls several GB of CUDA libraries that hosted servers don't need
+--extra-index-url https://download.pytorch.org/whl/cpu
+streamlit>=1.35
+torch>=2.2
+torchvision>=0.21
+peft>=0.13
+pillow
+pandas
+# FoundPAD only (the TPO authors' code uses OpenAI CLIP)
+ftfy
+regex
+clip @ git+https://github.com/openai/CLIP.git

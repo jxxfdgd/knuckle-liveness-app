@@ -17,7 +17,7 @@ import pandas as pd
 import streamlit as st
 import torch
 from peft import LoraConfig, inject_adapter_in_model
-from PIL import Image
+from PIL import Image,ImageOps
 from torch import nn
 from torch.nn import functional as F
 from torchvision.models import mobilenet_v3_large
@@ -93,7 +93,7 @@ with st.sidebar:
 camera, upload = st.tabs(["📷 Camera", "📁 Upload 1–5 frames of one attempt"])
 shot = camera.camera_input("Take a photo")
 files = upload.file_uploader("Frames", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
-images = [Image.open(shot)] if shot else [Image.open(f) for f in (files or [])[:5]]
+images = [ImageOps.exif_transpose(Image.open(f)) for f in ([shot] if shot else (files or [])[:5])]
 
 if images and chosen:
     for col, img in zip(st.columns(len(images)), images):
